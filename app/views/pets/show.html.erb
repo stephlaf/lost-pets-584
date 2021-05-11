@@ -1,0 +1,11 @@
+<h1><%= @pet.name.capitalize %></h1>
+<p>the <%= @pet.species %></p>
+<p>Was found in <%= @pet.address %>, <%= @days %> days ago</p>
+
+<p><%= link_to 'Change the pet', edit_pet_path(@pet) %></p>
+<p><%= link_to "Get rid of #{@pet.name}",
+  pet_path(@pet),
+  method: 'delete',
+  data: { confirm: 'Really?'}
+%></p>
+<p><%= link_to 'Home', root_path %></p>
